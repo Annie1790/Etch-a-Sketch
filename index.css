@@ -1,0 +1,21 @@
+.buttonSection {
+    align-items: center;
+}
+
+.buttonSection > {
+display: grid;
+
+}
+
+.canvas-frame {
+    display: grid;
+    height: max-content;
+    width: max-content;
+}
+
+#sketchCanvas {
+    display: grid;
+    column-gap: 0px;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+}

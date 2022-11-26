@@ -1,2 +1,2 @@
 # Etch-a-Sketch
-Odin Project
+Odin Project created by Me.
