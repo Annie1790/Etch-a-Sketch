@@ -8,11 +8,15 @@ function createCube() {
     canvas.appendChild(cubes)
 }
 function createGrid(number) {
-    for (let i = 0; i < number; i++) {
+    const sketch = document.querySelector("#sketchCanvas");
+    sketch.style.gridTemplateColumns = `repeat(${number}, 1fr)`
+    sketch.style.gridTemplateRows = `repeat(${number}, 1fr)`
+    let totalCubes = number * number
+    for (let i = 0; i < totalCubes; i++) {
         createCube()
     }
 }
-createGrid(256)
+createGrid(32)
 
 const color = document.querySelectorAll(".hoverColor")
 for (let i = 0; i < color.length; i++) {
@@ -20,3 +24,16 @@ for (let i = 0; i < color.length; i++) {
         color[i].style.backgroundColor = "black";
     })
 }
+
+
+const button = document.querySelector("#button");
+button.addEventListener("click", function () {
+    let number = prompt("Enter a number", 0);
+    Number(number);
+    if (number < 51) {
+        createGrid(number);
+    } else {
+        alert("Canvas is too big!")
+    }
+});
+
