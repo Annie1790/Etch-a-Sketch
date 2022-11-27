@@ -26,7 +26,8 @@ function hover() {
         color[i].addEventListener("mouseover", function () {
             color[i].style.backgroundColor = "black";
         })
-    }}
+    }
+}
 
 createGrid(currentSize);
 
