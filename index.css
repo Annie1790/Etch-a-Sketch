@@ -89,10 +89,10 @@ button {
     gap: 30px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     padding: 10% 5% 10% 5%;
     border: 5px double white;
-    background-color: rgb(172, 82, 177);
-    opacity: 0.8;
+    background-color: rgb(172, 82, 177, 0.5);
 }
 
 .options-box > button {
@@ -102,7 +102,7 @@ button {
 
 footer {
 
-    grid-row: 4;
+    grid-row: 5;
     grid-column-start: 1;
     grid-column-end: span 3;
     width: 100%;

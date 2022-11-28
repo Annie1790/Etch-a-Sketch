@@ -1,6 +1,13 @@
 const canvas = document.querySelector("#sketchCanvas");
+const sizeofCanvas = document.querySelector("#button");
+const hoverColor = document.querySelectorAll(".hoverColor");
+const brushColor = document.querySelector("#changeColor");
+let defaultBrushColor = brushColor.value;
+defaultBrushColor = "0000000";
+const brushSize = document.querySelector("#changeBrushSize");
 const currentSize = 32;
 
+//Create 1 single cube 
 function createCube() {
     const cubes = document.createElement("div");
     cubes.classList.add("hoverColor");
@@ -9,6 +16,8 @@ function createCube() {
     cubes.style.border = "solid 0.5px gray"
     canvas.appendChild(cubes)
 }
+
+//Create grid
 function createGrid(number) {
     canvas.innerHTML = "";
     canvas.style.gridTemplateColumns = `repeat(${number}, 1fr)`
@@ -17,28 +26,38 @@ function createGrid(number) {
     for (let i = 0; i < totalCubes; i++) {
         createCube()
     }
-    hover();
+    ;
 }
-
+//Default hover color
 function hover() {
-    const color = document.querySelectorAll(".hoverColor")
-    for (let i = 0; i < color.length; i++) {
-        color[i].addEventListener("mouseover", function () {
-            color[i].style.backgroundColor = "black";
+    const hoverColor = document.querySelectorAll(".hoverColor");
+    for (let i = 0; i < hoverColor.length; i++) {
+        hoverColor[i].addEventListener("mouseover", function () {
+            hoverColor[i].style.backgroundColor = defaultBrushColor;
         })
     }
 }
+//Chosen hover color
+function appliedColor() {  
+    const hoverColor = document.querySelectorAll(".hoverColor");
+    for (let i = 0; i < hoverColor.length; i++) {
+        hoverColor[i].addEventListener("mouseover", function () {
+            hoverColor[i].style.backgroundColor = brushColor.value;
+        })
+  }
+}
 
-createGrid(currentSize);
-
-const button = document.querySelector("#button");
-button.addEventListener("click", function () {
-    let newNumOfGrid = prompt("Enter a number", 0);
-    Number(newNumOfGrid);
-    if (newNumOfGrid < 51) {
-        createGrid(newNumOfGrid);
+sizeofCanvas.addEventListener("click", function () {
+    let newSize = prompt("Enter a number", 0);
+    Number(newSize);
+    if (newSize < 51) {
+        createGrid(newSize);
     } else {
         alert("Canvas is too big!")
     }
 });
+brushColor.addEventListener("change", appliedColor)
 
+
+createGrid(currentSize);
+hover();
