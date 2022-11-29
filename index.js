@@ -10,8 +10,8 @@ const currentSize = 32;
 function createCube() {
     const cubes = document.createElement("div");
     cubes.classList.add("hoverColor");
-    cubes.style.height = 16;
-    cubes.style.width = 16;
+    cubes.style.height = "16px";
+    cubes.style.width = "16px";
     cubes.style.border = "solid 0.5px gray";
     canvas.appendChild(cubes);
 }

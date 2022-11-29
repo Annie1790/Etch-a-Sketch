@@ -12,7 +12,7 @@
 body {
     font-family: PressStart;
     margin: 0;
-    padding: 0;
+    padding: 0; 
     background-image: url("./media/pxArt.png");
     background-repeat: no-repeat;
     -webkit-background-size: cover;
@@ -21,6 +21,7 @@ body {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    height: 100vh;
 }
 
 button {
@@ -33,7 +34,7 @@ header {
     grid-row: 1;
     grid-column-start: 1;
     grid-column-end: span 3;
-    padding: 2em;
+    padding: 0;
     margin-bottom: 3em;
     background-color: rgb(172, 82, 177, 0.5);
     ;
