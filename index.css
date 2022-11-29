@@ -24,6 +24,22 @@ button {
     font-size: 30px;
 }
 
+header {
+    color: white;
+    grid-row: 1;
+    grid-column-start: 1;
+    grid-column-end: span 3;
+    padding: 2em;
+    margin-bottom: 3em;
+    background-color: rgb(172, 82, 177, 0.5);
+    ;
+    width: 100%;
+    box-shadow:   -15px 0 0 0 white,
+                 15px 0 0 0 white,
+                 0 -15px 0 0 white,
+                 0 15px 0 0 white;
+}
+
 .wrapping {
     display: grid;
     place-items: center;
@@ -45,23 +61,14 @@ button {
     grid-column: 3;
     grid-row: 3;
     background-color: rgb(255, 174, 0);
-    
+
 }
 
-.nav-bar>li {
-}
+.nav-bar>li {}
 
 .nav-bar :hover {
     background-color: rgb(156, 106, 0)
 }
-
-
-
-.button-section {
-    grid-row: 2;
-    grid-column: 2;
-}
-
 
 .canvas-position {
     grid-row: 3;
@@ -91,11 +98,14 @@ button {
     flex-direction: column;
     align-items: center;
     padding: 10% 5% 10% 5%;
-    border: 5px double white;
     background-color: rgb(172, 82, 177, 0.5);
+    box-shadow: -15px 0 0 0 white,
+        15px 0 0 0 white,
+        0 -15px 0 0 white,
+        0 15px 0 0 white;
 }
 
-.options-box > button {
+.options-box>button {
     opacity: 100%;
 }
 
@@ -110,4 +120,3 @@ footer {
     margin-top: auto;
     text-align: center;
 }
-
