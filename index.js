@@ -5,6 +5,11 @@ const brushSize = document.querySelector("#changeBrushSize");
 const rainbow = document.querySelector("#changeRainbow");
 const erase = document.querySelector("#changeErase");
 const currentSize = 32;
+let shouldErase = false;
+let shouldRainbow = false;
+
+
+
 
 //Create 1 single cube 
 function createCube() {
@@ -33,26 +38,52 @@ function appliedColor() {
     const hoverColor = document.querySelectorAll(".hoverColor");
     for (let i = 0; i < hoverColor.length; i++) {
         hoverColor[i].addEventListener("mouseover", function () {
-            hoverColor[i].style.backgroundColor = brushColor.value;
+            console.log("shouldErase " + shouldErase)
+            console.log("shouldRainbow" + shouldRainbow)
+            if (shouldErase == true) {
+                hoverColor[i].style.backgroundColor = "white";
+            } else if (shouldRainbow == true) {
+                let rainbowColor = Math.floor(Math.random() * 16777215).toString(16);
+                hoverColor[i].style.backgroundColor = "#" + rainbowColor;
+            }
+            else {
+                hoverColor[i].style.backgroundColor = brushColor.value;
+            }
         })
     }
 }
-
-// Rainbow Color
-
-
-//Erase
 
 
 sizeofCanvas.addEventListener("click", function () {
     let newSize = prompt("Enter a number", 0);
     newSize = Number(newSize);
-    if (newSize < 51) {
+    if (newSize < 41) {
         createGrid(newSize);
     } else {
         alert("Canvas is too big!")
     }
 });
+
+brushColor.addEventListener("change", function () {
+    shouldErase = false;
+    shouldRainbow = false;
+    console.log("shouldErase " + shouldErase)
+    console.log("shouldRainbow" + shouldRainbow)
+})
+
+erase.addEventListener("click", function () {
+    shouldRainbow = false;
+    shouldErase = true;
+    console.log("shouldErase " + shouldErase)
+    console.log("shouldRainbow" + shouldRainbow)
+})
+
+rainbow.addEventListener("click", function () {
+    shouldErase = false;
+    shouldRainbow = true;
+    console.log("shouldErase " + shouldErase)
+    console.log("shouldRainbow" + shouldRainbow)
+})
 
 
 

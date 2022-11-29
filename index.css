@@ -67,7 +67,7 @@ header {
     box-shadow: -15px 0 0 0 white, 15px 0 0 0 white, 0 -15px 0 0 white, 0 15px 0 0 white;
 }
 
-.nav-bar>li {}
+
 
 .nav-bar :hover {
     background-color: rgb(156, 106, 0)
@@ -124,7 +124,9 @@ width: 55px;
 height: 55px;
 }
 
-
+#changeErase {
+    color: white;
+}
 
 footer {
 
