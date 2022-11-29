@@ -2,6 +2,8 @@ const canvas = document.querySelector("#sketchCanvas");
 const sizeofCanvas = document.querySelector("#button");
 const brushColor = document.querySelector("#changeColor");
 const brushSize = document.querySelector("#changeBrushSize");
+const rainbow = document.querySelector("#changeRainbow");
+const erase = document.querySelector("#changeErase");
 const currentSize = 32;
 
 //Create 1 single cube 
@@ -35,6 +37,12 @@ function appliedColor() {
         })
     }
 }
+
+// Rainbow Color
+
+
+//Erase
+
 
 sizeofCanvas.addEventListener("click", function () {
     let newSize = prompt("Enter a number", 0);

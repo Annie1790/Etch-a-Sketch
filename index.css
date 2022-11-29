@@ -3,7 +3,11 @@
     src: url(./media/PressStart2P-Regular.ttf);
 }
 
-
+/*.something {
+  transform: scale(1.1);
+  border-color: #ffc600;
+  box-shadow: 0 0 1rem #ffc600;
+}*/
 
 body {
     font-family: PressStart;
@@ -34,10 +38,7 @@ header {
     background-color: rgb(172, 82, 177, 0.5);
     ;
     width: 100%;
-    box-shadow:   -15px 0 0 0 white,
-                 15px 0 0 0 white,
-                 0 -15px 0 0 white,
-                 0 15px 0 0 white;
+    box-shadow: -15px 0 0 0 white, 15px 0 0 0 white, 0 -15px 0 0 white, 0 15px 0 0 white;
 }
 
 .wrapping {
@@ -55,13 +56,14 @@ header {
     padding: 0;
     list-style-type: none;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     margin: auto;
     grid-column: 3;
     grid-row: 3;
-    background-color: rgb(255, 174, 0);
-
+    padding: 10% 5% 10% 5%;
+    background-color: rgb(255, 174, 0, 0.7);
+    box-shadow: -15px 0 0 0 white, 15px 0 0 0 white, 0 -15px 0 0 white, 0 15px 0 0 white;
 }
 
 .nav-bar>li {}
@@ -74,6 +76,9 @@ header {
     grid-row: 3;
     grid-column: 2;
     justify-items: stretch;
+    padding: 3%;
+    background-color: rgb(172, 82, 177, 0.5);;
+    box-shadow: -10px 0 0 0 rgb(255, 171, 3), 10px 0 0 0 rgb(81, 255, 46), 0 -10px 0 0 rgb(18, 219, 255), 0 10px 0 0 rgb(255, 58, 225);
 }
 
 .canvas-frame {
@@ -99,15 +104,25 @@ header {
     align-items: center;
     padding: 10% 5% 10% 5%;
     background-color: rgb(172, 82, 177, 0.5);
-    box-shadow: -15px 0 0 0 white,
-        15px 0 0 0 white,
-        0 -15px 0 0 white,
-        0 15px 0 0 white;
+    box-shadow: -15px 0 0 0 white, 15px 0 0 0 white, 0 -15px 0 0 white, 0 15px 0 0 white;
 }
 
-.options-box>button {
-    opacity: 100%;
+.options-box>input {
+    border: none;
+    background-color: white;
+    padding: 0;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    box-shadow: -5px 0 0 0 white, 5px 0 0 0 white, 0 -5px 0 0 white, 0 5px 0 0 white;
+    transition: width 0.5s, height 0.5s;
 }
+
+.options-box>input:hover {
+width: 55px;
+height: 55px;
+}
+
 
 
 footer {
